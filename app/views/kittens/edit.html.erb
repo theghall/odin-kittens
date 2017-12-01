@@ -1,6 +1,4 @@
 <h1>Editing Kitten</h1>
-
-<%= render 'form', kitten: @kitten %>
-
-<%= link_to 'Show', @kitten %> |
-<%= link_to 'Back', kittens_path %>
+<% provide(:rest_url, kitten_path(@kitten)) %>
+<% provide(:button_text, 'Update') %>
+<%= render 'kitten_form' %>

@@ -1,5 +1,4 @@
 <h1>New Kitten</h1>
-
-<%= render 'form', kitten: @kitten %>
-
-<%= link_to 'Back', kittens_path %>
+<% provide(:rest_url, kittens_path) %>
+<% provide(:button_text, 'Save') %>
+<%= render 'kitten_form' %>

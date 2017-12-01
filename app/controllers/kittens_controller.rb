@@ -19,6 +19,7 @@ class KittensController < ApplicationController
 
   # GET /kittens/1/edit
   def edit
+    @kitten = Kitten.find(params[:id])
   end
 
   # POST /kittens
@@ -69,6 +70,6 @@ class KittensController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kitten_params
-      params.fetch(:kitten, {})
+      params.require(:kitten).permit(:name, :age, :cuteness, :softness)
     end
 end
